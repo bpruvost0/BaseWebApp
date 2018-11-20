@@ -2,27 +2,49 @@
 <head>
     <% include ../helpers/head %>
 </head>
-<body class="container">
 
-  <header>
-    <% include ../helpers/navbar %>
-  </header>
+<body>
 
-  <main>
-    <div class="jumbotron">
-      <h1>Belen Pruvost</h1>
-      <p>Welcome to my personal website.</p>
-      <p><a class="btn btn-primary btn-lg" href="https://github.com/zsobin/PersonalWebApp" target="_blank" role="button">See the repo</a></p>
-    </div>
-    <div class="tina-gif">
-      <iframe src="https://media.giphy.com/media/26tP2oGvSpIqHcAEM/giphy.gif" width="480" height="450" frameBorder="0"  allowFullScreen></iframe>
-      <p>
-        <a href="https://giphy.com/gifs/homealone-90s-home-alone-26tP2oGvSpIqHcAEM">
-          via GIPHY
-        </a>
-      </p>
-    </div>
-  </main>
+  <!-- the classes 'page-header' and 'btn btn-default' create bootstrap components.  -->
+  <!-- Check out more components here: http://getbootstrap.com/components/ -->
+  <div class="page-header">
+    <h1>Stream</h1>
+  </div>
+
+  <button id="login-button" class="btn btn-default" type="button" onclick="toggleSignIn()">
+    Sign in to view stream
+  </button>
+
+  <section id="add-post">
+    <h2 class="mdl-card__title-text">
+      New Post
+    </h2>
+
+    <form id="message-form" action="#">
+      <div class="form-group">
+        <label for="new-post-title">
+          Post title...
+        </label>
+        <input type="text" id="new-post-title">
+      </div>
+
+      <div class="form-group">
+        <label for="new-post-body">
+          Post message...
+        </label>
+        <textarea rows="3" id="new-post-body"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-default" onclick="handleMessageFormSubmit()">
+        Add post
+      </button>
+    </form>
+  </section>
+
+  <div id="stream">
+    Stream goes here:
+  </div>
 
 </body>
+
 </html>
